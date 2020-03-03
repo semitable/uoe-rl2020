@@ -8,9 +8,9 @@ from rl2020.exercise2.utils import wolf_visualize_policy
 CONFIG = {
     "total_eps": 1000000,
     "eval_freq": 50000,
-    "learning_rate": 0.001,
     "gamma": 0.99,
     "num_acts": 3,
+    "alpha": 0.001,
     "win_delta": 0.000002,
     "lose_delta": 0.000004,
     "init_policy": [0.5, 0.38, 0.12],
@@ -28,14 +28,7 @@ def train(env, config):
         total reward over all episodes, list of means and standard deviations of evaluation
         rewards, final Q-table, final state-action counts
     """
-
-    agent_config = {
-        "num_acts": config["num_acts"],
-        "win_delta": config["win_delta"],
-        "lose_delta": config["lose_delta"],
-        "init_policy": config["init_policy"],
-    }
-    agents = [WolfPHCAgent(**agent_config) for _ in range(2)]
+    agents = [WolfPHCAgent(**config) for _ in range(2)]
     eval_policies1 = []
     eval_policies2 = []
     avg_rewards1 = []

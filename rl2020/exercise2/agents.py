@@ -196,6 +196,7 @@ class WolfPHCAgent:
         win_delta: float,
         lose_delta: float,
         init_policy: List[float],
+        **kwargs
     ):
         """Constructor of WolfPHCAgent
 
