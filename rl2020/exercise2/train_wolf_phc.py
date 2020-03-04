@@ -10,10 +10,11 @@ CONFIG = {
     "eval_freq": 50000,
     "gamma": 0.99,
     "num_acts": 3,
-    "alpha": 0.001,
+    "alpha": 0.1,
     "win_delta": 0.000002,
     "lose_delta": 0.000004,
-    "init_policy": [0.5, 0.38, 0.12],
+    "init_policy_0": [0.5, 0.38, 0.12],
+    "init_policy_1": [0.5, 0.38, 0.12],
 }
 
 
@@ -28,7 +29,10 @@ def train(env, config):
         total reward over all episodes, list of means and standard deviations of evaluation
         rewards, final Q-table, final state-action counts
     """
-    agents = [WolfPHCAgent(**config) for _ in range(2)]
+    agents = []
+    for i in range(2):
+        config["init_policy"] = config[f"init_policy_{i}"]
+        agents.append(WolfPHCAgent(**config))
     eval_policies1 = []
     eval_policies2 = []
     avg_rewards1 = []

@@ -234,7 +234,7 @@ class WolfPHCAgent:
         self.avg_pi_table: DefaultDict = defaultdict(
             lambda: [0 for _ in range(self.n_acts)]
         )
-        self.pi_table: DefaultDict = defaultdict(lambda: init_policy)
+        self.pi_table: DefaultDict = defaultdict(lambda: init_policy.copy())
         self.vis_table: DefaultDict = defaultdict(lambda: 0)
 
     def learn(
