@@ -22,7 +22,7 @@ def test_config_0():
     from rl2020.exercise3.train_dqn import CARTPOLE_CONFIG
     assert "eval_freq" in CARTPOLE_CONFIG
     assert "eval_episodes" in CARTPOLE_CONFIG
-    assert "target_reward" in CARTPOLE_CONFIG
+    assert "target_return" in CARTPOLE_CONFIG
     assert "episode_length" in CARTPOLE_CONFIG
     assert "max_timesteps" in CARTPOLE_CONFIG
 
@@ -33,7 +33,7 @@ def test_config_1():
     from rl2020.exercise3.train_dqn import LUNARLANDER_CONFIG
     assert "eval_freq" in LUNARLANDER_CONFIG
     assert "eval_episodes" in LUNARLANDER_CONFIG
-    assert "target_reward" in LUNARLANDER_CONFIG
+    assert "target_return" in LUNARLANDER_CONFIG
     assert "episode_length" in LUNARLANDER_CONFIG
     assert "max_timesteps" in LUNARLANDER_CONFIG
 
@@ -45,7 +45,7 @@ def test_config_2():
     from rl2020.exercise3.train_reinforce import CARTPOLE_CONFIG
     assert "eval_freq" in CARTPOLE_CONFIG
     assert "eval_episodes" in CARTPOLE_CONFIG
-    assert "target_reward" in CARTPOLE_CONFIG
+    assert "target_return" in CARTPOLE_CONFIG
     assert "episode_length" in CARTPOLE_CONFIG
     assert "max_timesteps" in CARTPOLE_CONFIG
 
@@ -53,7 +53,7 @@ def test_config_3():
     from rl2020.exercise3.train_reinforce import LUNARLANDER_CONFIG
     assert "eval_freq" in LUNARLANDER_CONFIG
     assert "eval_episodes" in LUNARLANDER_CONFIG
-    assert "target_reward" in LUNARLANDER_CONFIG
+    assert "target_return" in LUNARLANDER_CONFIG
     assert "episode_length" in LUNARLANDER_CONFIG
     assert "max_timesteps" in LUNARLANDER_CONFIG
 
