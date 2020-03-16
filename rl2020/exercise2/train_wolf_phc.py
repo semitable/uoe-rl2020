@@ -60,8 +60,8 @@ def train(env, config):
 
         if step_counter % config["eval_freq"] == 0:
             # Store the current policies of agents
-            eval_policies1.append(agents[0].pi_table[obs[0]])
-            eval_policies2.append(agents[1].pi_table[obs[1]])
+            eval_policies1.append(agents[0].pi_table[obs[0]].copy())
+            eval_policies2.append(agents[1].pi_table[obs[1]].copy())
 
             # Average the rewards achieved since previous evaluation
             avg_rewards1.append(sum(reward_list1) / len(reward_list1))
